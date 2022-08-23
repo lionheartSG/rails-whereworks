@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reservation_startdatetime: 2022-08-23 16:16:20
+  reservation_enddatetime: 2022-08-23 16:16:20
+  user: one
+  listing: one
+
+two:
+  reservation_startdatetime: 2022-08-23 16:16:20
+  reservation_enddatetime: 2022-08-23 16:16:20
+  user: two
+  listing: two
