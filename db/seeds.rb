@@ -12,11 +12,11 @@ Listing.destroy_all
 Booking.destroy_all
 
 puts "Seeding database..."
-10.times do
+10.times do |index|
   user = User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
+    email: "fake_email_#{index}@gmail.com",
     password: "password"
   )
   puts "User created"
@@ -30,7 +30,7 @@ puts "Seeding database..."
       booking_type: BOOKING_CAT.sample,
       description: Faker::Company.catch_phrase,
       price: rand(2..20),
-      user: user
+      user:
     )
     puts "Listing created"
     # Generate random number (between 0-5) of seeds
@@ -40,8 +40,8 @@ puts "Seeding database..."
         reservation_enddatetime: Faker::Date.forward(days: 23),
         quantity: rand(1..5),
         status: STATUS.sample,
-        listing: listing,
-        user: user
+        listing:,
+        user:
       )
       puts "Booking created"
     end
