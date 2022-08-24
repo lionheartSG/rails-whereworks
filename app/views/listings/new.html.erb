@@ -1,0 +1,10 @@
+<%= simple_form_for(@listing) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :listing_type, collection: Listing::LISTING_TYPES %>
+  <%= f.input :booking_type, collection: Listing::BOOKING_TYPES %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :zone, collection: Listing::ZONES %>
+  <%= f.submit %>
+  <% end %>

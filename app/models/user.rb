@@ -3,4 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :listings, dependent: :destroy
+  has_many :booking
+  validates :first_name, :last_name, presence: true, length: { minimum: 2 }
+  validates :email, uniqueness: true, format: { with: /\A.*@.*\.com\z/ }
 end
