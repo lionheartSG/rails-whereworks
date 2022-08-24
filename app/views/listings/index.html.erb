@@ -1,12 +1,16 @@
-<h1>Lets begin!!</h1>
-<div>
-<% @listings.each do |listing| %>
-  <%= listing.name %>
-  <%= listing.address %>
-  <%= listing.listing_type %>
-  <%= listing.booking_type %>
-  <%= listing.description %>
-  $<%= listing.price.round() %>
-  <%= listing.zone %>
-<% end %>
+<div class="container">
+  <h1>All Listings</h1>
+  <div class="row">
+    <% @listings.each do |listing| %>
+    <div class="card m-2 col-3">
+      <div class="card-body">
+        <h5 class="card-title"><%= listing.name %></h5>
+        <p class="card-text"><%= listing.zone %></p>
+        <p class="card-text"><%= listing.booking_type %></p>
+        <p class="card-text">Availability</p>
+        <p class="card-text"><%= listing.price %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
