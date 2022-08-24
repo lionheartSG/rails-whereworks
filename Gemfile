@@ -33,6 +33,7 @@ gem "autoprefixer-rails"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
 gem "devise"
+gem "pundit"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
