@@ -1,1 +1,20 @@
-<h1>yo</h1>
+<%= render "navbar" %>
+<div class="banner">
+  <h1>Where to, boss?</h1>
+  <div class="banner-form">
+    <%= form_with url: "/index", method: :post do |f| %>
+      <%= f.text_field :name, value: "Search" %>
+      <%= f.date_field :date, value: "Date" %>
+      <%= f.time_field :start_time, value: "Start Time" %>
+      <%= f.time_field :end_time, value: "End Time" %>
+      <%= f.submit "Search" %>
+      <% end %>
+  </div>
+</div>
+<div class="tagline">
+  <div class="container">
+    <div><h1>WhereWorks</h1></div>
+    <div><h2>When you’re actually more productive away from the office</h2></div>
+  </div>
+</div>
+<%= render "footer" %>
