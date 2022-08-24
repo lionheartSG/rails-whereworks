@@ -1,7 +1,7 @@
 class Listing < ApplicationRecord
   LISTING_TYPES = ["Cafe", "Coworking Space", "Restaurant", "Residential"]
   BOOKING_TYPES = ["Table", "Room"]
-  ZONES = ["North", "South", "East", "West"]
+  ZONES = ["North", "South", "East", "West", "Central"]
 
   belongs_to :user
   has_many :booking

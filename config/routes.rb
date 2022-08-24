@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "listings#index"
-  resources :listings
+  root "listings#home"
   resources :users
+  resources :listings
   resources :booking
 end
