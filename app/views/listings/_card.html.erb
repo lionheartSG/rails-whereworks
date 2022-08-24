@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="listing-container">
+    <% @listings.each do |listing| %>
+      <div class="listing-card">
+        <div class="img-placeholder"></div>
+        <div class="content-wrap">
+          <p><%= listing.name %></p>
+          <p><%= listing.zone %></p>
+          <p><%= listing.booking_type %></p>
+          <p>10 tables available</p>
+          <p><%= listing.price %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
