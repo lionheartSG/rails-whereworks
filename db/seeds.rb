@@ -2,6 +2,7 @@ require "faker"
 
 LISTING_CAT = ["Cafe", "Coworking Space", "Restaurant", "Residential"]
 BOOKING_CAT = ["Table", "Room"]
+ZONE = ["North", "South", "East", "West", "Central"]
 
 # Seeding users and listings
 puts "Cleaning up database..."
@@ -26,7 +27,8 @@ puts "Seeding database..."
       booking_type: BOOKING_CAT.sample,
       description: Faker::Company.catch_phrase,
       price: rand(2..20),
-      user:
+      user: user,
+      zone: ZONE.sample,
     )
     puts "Successfully created"
   end
