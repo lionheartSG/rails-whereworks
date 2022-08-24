@@ -1,12 +1,3 @@
-<h1>Lets begin!!</h1>
-<div>
-<% @listings.each do |listing| %>
-  <%= listing.name %>
-  <%= listing.address %>
-  <%= listing.listing_type %>
-  <%= listing.booking_type %>
-  <%= listing.description %>
-  $<%= listing.price.round() %>
-  <%= listing.zone %>
-<% end %>
-</div>
+<%= render "navbar" %>
+<%= render "card" %>
+<%= render "footer" %>
