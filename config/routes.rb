@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "listings#home"
   resources :users
-  resources :listings
-  resources :booking
+  resources :listings do
+    resources :bookings, only: [:new, :create]
+  end
+  resources :bookings, only: [:update, :edit, :show]
 end
