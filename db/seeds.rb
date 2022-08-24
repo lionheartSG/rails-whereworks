@@ -12,7 +12,25 @@ Listing.destroy_all
 Booking.destroy_all
 
 puts "Seeding database..."
+
+# Create two set users
+bob_user = User.create(
+  first_name: "Bob",
+  last_name: "Bobberson",
+  email: "bob.bobberson@gmail.com",
+  password: "password"
+)
+
+alex_user = User.create(
+  first_name: "Alex",
+  last_name: "Alexson",
+  email: "alex.alexson@gmail.com",
+  password: "password"
+)
+
+# create faker data
 10.times do |index|
+  # Generate 10 users
   user = User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -20,7 +38,7 @@ puts "Seeding database..."
     password: "password"
   )
   puts "User created"
-  # Generate random number (between 0-5) of seeds
+  # Generate (0-5) listings per user
   rand(5).times do
     listing = Listing.create(
       name: Faker::Company.name,
@@ -33,7 +51,7 @@ puts "Seeding database..."
       user:
     )
     puts "Listing created"
-    # Generate random number (between 0-5) of seeds
+    # Generate (0-5) bookings per listing
     rand(5).times do
       Booking.create(
         reservation_startdatetime: Faker::Date.forward(days: 23),
