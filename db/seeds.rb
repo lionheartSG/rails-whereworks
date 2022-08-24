@@ -3,11 +3,13 @@ require "faker"
 LISTING_CAT = ["Cafe", "Coworking Space", "Restaurant", "Residential"]
 BOOKING_CAT = ["Table", "Room"]
 ZONE = ["North", "South", "East", "West", "Central"]
+STATUS = ["Cancelled", "Completed", "Pending", "Active"]
 
-# Seeding users and listings
+# Seeding users, listings and bookings
 puts "Cleaning up database..."
 User.destroy_all
 Listing.destroy_all
+Booking.destroy_all
 
 puts "Seeding database..."
 10.times do
@@ -18,19 +20,31 @@ puts "Seeding database..."
     password: "password"
   )
   puts "User created"
-  # Create a random number (between 0-5) of seeds per user
+  # Generate random number (between 0-5) of seeds
   rand(5).times do
-    Listing.create(
+    listing = Listing.create(
       name: Faker::Company.name,
+      zone: ZONE.sample,
       address: Faker::Address.street_address,
       listing_type: LISTING_CAT.sample,
       booking_type: BOOKING_CAT.sample,
       description: Faker::Company.catch_phrase,
       price: rand(2..20),
-      user: user,
-      zone: ZONE.sample,
+      user: user
     )
-    puts "Successfully created"
+    puts "Listing created"
+    # Generate random number (between 0-5) of seeds
+    rand(5).times do
+      Booking.create(
+        reservation_startdatetime: Faker::Date.forward(days: 23),
+        reservation_enddatetime: Faker::Date.forward(days: 23),
+        quantity: rand(1..5),
+        status: STATUS.sample,
+        listing: listing,
+        user: user
+      )
+      puts "Booking created"
+    end
   end
 end
 puts "Finished!"
