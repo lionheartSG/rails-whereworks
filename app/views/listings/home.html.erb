@@ -3,11 +3,11 @@
   <h1>Where to, boss?</h1>
   <div class="banner-form">
     <%= form_with url: "/index", method: :post do |f| %>
-      <%= f.text_field :name, value: "Search" %>
-      <%= f.date_field :date, value: "Date" %>
-      <%= f.time_field :start_time, value: "Start Time" %>
-      <%= f.time_field :end_time, value: "End Time" %>
-      <%= f.submit "Search" %>
+      <%= f.text_field :name, placeholder: "Search", class: "input-text" %>
+      <%= f.date_field :date, value: Date.today %>
+      <%= f.time_field :start_time, value: @time %>
+      <%= f.time_field :end_time, value: @newtime %>
+      <%= f.submit "Search", class: "btn btn-banner" %>
       <% end %>
   </div>
 </div>
