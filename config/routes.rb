@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "listings#index"
-  resources :listings, only: %i[ index show new create]
+  resources :listings
   resources :users
+  resources :booking
 end
