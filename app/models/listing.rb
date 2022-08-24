@@ -4,11 +4,11 @@ class Listing < ApplicationRecord
   ZONES = ["North", "South", "East", "West", "Central"]
 
   belongs_to :user
-  has_many :booking
-  validates :name, :address, presence: true, length: { minimum: 2 }
-  validates :description, presence: true, length: { minimum: 2 }
-  validates :listing_type, presence: true, inclusion: { in: LISTING_TYPES }
-  validates :booking_type, presence: true, inclusion: { in: BOOKING_TYPES }
-  validates :zone, presence: true, inclusion: { in: ZONES }
-  validates :price, presence: true
+  has_many :bookings, dependent: :destroy
+  # validates :name, :address, presence: true, length: { minimum: 2 }
+  # validates :description, presence: true, length: { minimum: 2 }
+  # validates :listing_type, presence: true, inclusion: { in: LISTING_TYPES }
+  # validates :booking_type, presence: true, inclusion: { in: BOOKING_TYPES }
+  # validates :zone, presence: true, inclusion: { in: ZONES }
+  # validates :price, presence: true
 end
