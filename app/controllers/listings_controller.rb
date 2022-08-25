@@ -40,6 +40,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(%i[name address listing_type booking_type description price zone])
+    params.require(:listing).permit(:name, :address, :listing_type, :booking_type, :description, :price, :zone, photos: [])
   end
 end
