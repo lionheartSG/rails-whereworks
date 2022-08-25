@@ -54,7 +54,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = params[:status]
     @booking.save!
-    redirect_to user_path(current_user)
+    redirect_to bookings_user_path(current_user)
   end
 
 private

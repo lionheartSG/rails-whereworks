@@ -7,7 +7,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.listing.user == user
   end
 
   def create?
@@ -15,10 +15,10 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def confirm?
-    record.user == user
+    (record.listing.user == user) || (record.user == user)
   end
 
   def cancel?
-    record.user == user
+    (record.listing.user == user) || (record.user == user)
   end
 end
