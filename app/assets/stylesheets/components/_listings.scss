@@ -8,12 +8,13 @@
 .listing-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  // grid-gap: 30px;
+  grid-gap: 30px;
   .listing-card {
     background-color: white;
-    width: 400px;
-    .cafe-img {
-      max-width: 100%;
+    .img-wrap {
+      .cafe-img {
+        max-width: 100%;
+      }
     }
     .content-wrap {
       margin: 20px 10px;
