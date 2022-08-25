@@ -1,4 +1,5 @@
-<%= render "navbar" %>
+
+<%= render "indexnavbar" %>
 
 <div class="container">
 
@@ -14,7 +15,7 @@
       <div class="listing-card">
         <div class="img-placeholder"></div>
         <div class="content-wrap">
-          <p class="listing-name"><%= listing.name %></p>
+          <%= link_to listing.name, listing_path(listing), class: "listing-name" %>
           <p><%= listing.zone %></p>
           <p><%= listing.booking_type %></p>
           <div class="bottom-row">
