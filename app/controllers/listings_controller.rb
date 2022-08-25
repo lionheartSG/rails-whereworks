@@ -19,13 +19,12 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     authorize @listing
+    @booking = Booking.new
   end
 
   def new
     @listing = Listing.new
     authorize @listing
-    @booking = Booking.new
-
   end
 
   def create
