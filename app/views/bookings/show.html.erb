@@ -7,3 +7,5 @@
 <p>Price: <%= @booking.listing.price %></p>
 
 <%= link_to "Confirm", confirm_booking_path(@booking, status: "Active"), method: :patch, class: "btn btn-primary"%>
+
+<%= link_to "Cancel", cancel_booking_path(@booking, status: "Cancelled"), method: :patch, class: "btn btn-primary"%>

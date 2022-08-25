@@ -34,7 +34,14 @@ class BookingsController < ApplicationController
     @booking.status = params[:status]
     @booking.save!
     redirect_to booking_path(@booking)
+  end
 
+  def cancel
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = params[:status]
+    @booking.save!
+    redirect_to booking_path(@booking)
   end
 
 private
