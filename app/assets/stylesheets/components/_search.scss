@@ -1,0 +1,33 @@
+.banner-form form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
+  input {
+    height: 50px;
+    padding-left: 4px;
+    padding-left: 4px;
+    margin-left: 2px;
+    border: 1px solid #929292;
+    border-radius: 5px;
+  }
+  .input-text {
+    flex-grow: 1;
+  }
+}
+
+.nav-form form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  input {
+    height: 45px;
+    padding-left: 4px;
+    margin-left: 2px;
+    border: 1px solid #929292;
+    border-radius: 5px;
+  }
+  .input-text {
+    flex-grow: 1;
+  }
+}
