@@ -1,3 +1,25 @@
 <%= render "navbar" %>
-<%= render "card" %>
+
+<div class="container">
+
+  <a href="#" class="btn-filter">Filter</a>
+
+  <div class="listing-container">
+    <% @listings.each do |listing| %>
+      <div class="listing-card">
+        <div class="img-placeholder"></div>
+        <div class="content-wrap">
+          <p class="listing-name"><%= listing.name %></p>
+          <p><%= listing.zone %></p>
+          <p><%= listing.booking_type %></p>
+          <div class="bottom-row">
+            <p>10 tables available</p>
+            <p class="listing-price"><%= listing.price %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <%= render "footer" %>
