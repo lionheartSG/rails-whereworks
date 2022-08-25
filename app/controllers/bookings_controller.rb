@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_listing, only: %i[create new]
+  # before_action :set_listing, only: %i[create new]
 
   # def create
   #   @booking = Booking.new(booking_params)
@@ -22,6 +22,19 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def create
+    @booking = Booking.new(booking_params)
+    listing = Listing.find(params[:listing_id])
+    @booking.user = current_user
+    @booking.listing = listing
+    authorize @booking
+    if @booking.save
+      redirect_to user_path(current_user)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
@@ -33,7 +46,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = params[:status]
     @booking.save!
-    redirect_to booking_path(@booking)
+    redirect_to user_path(current_user)
   end
 
   def cancel
@@ -41,7 +54,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = params[:status]
     @booking.save!
-    redirect_to booking_path(@booking)
+    redirect_to user_path(current_user)
   end
 
 private
