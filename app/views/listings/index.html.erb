@@ -10,8 +10,8 @@
     <% @listings.each do |listing| %>
       <div class="listing-card">
         <div class="img-wrap">
-          <% if listing.photos[0].key.nil? %>
-            <%= cl_image_tag “yc4g9b3ohgmzxj9eiz7q”, class: "cafe-img" %>
+          <% if listing.photos[0].nil? %>
+            <%= cl_image_tag "yc4g9b3ohgmzxj9eiz7q", class: "cafe-img" %>
           <% else %>
             <%= cl_image_tag listing.photos[0].key, class: "cafe-img" %>
           <% end %>
