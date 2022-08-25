@@ -1,1 +1,26 @@
-<h1>oi</h1>
+<%= render "navbar" %>
+
+<div class="container">
+<h1><%= @listing.name %></h1>
+
+<i class="fa-solid fa-star" 4.8></i><%# <p><%= @listing_reviews.listing_rating %></p>
+
+<%= cl_image_tag("yc4g9b3ohgmzxj9eiz7q", width: 600, height: 500, crop: :fill) %>
+
+
+<p><%= @listing.description %></p>
+</div>
+
+
+
+
+
+
+
+<%# booking new form %>
+<div class="container">
+<%# <%= render "form", booking: @listing.booking %>
+</div>
+
+
+<%= render "footer" %>

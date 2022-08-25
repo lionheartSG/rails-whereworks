@@ -24,6 +24,8 @@ class ListingsController < ApplicationController
   def new
     @listing = Listing.new
     authorize @listing
+    @booking = Booking.new
+
   end
 
   def create
