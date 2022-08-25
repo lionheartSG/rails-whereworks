@@ -1,6 +1,4 @@
 require "faker"
-require "open-uri"
-require "pry-byebug"
 
 LISTING_CAT = ["Cafe", "Coworking Space", "Restaurant", "Residential"]
 BOOKING_CAT = ["Table", "Room"]
@@ -52,12 +50,6 @@ User.create(
       price: rand(2..20),
       user:
     )
-    # Image from Cloudinary
-    file = URI.open("https://res.cloudinary.com/lionheartsg/image/upload/v1661409026/yc4g9b3ohgmzxj9eiz7q.png")
-    # binding.pry
-    listing.photos.attach(io: file, filename: "cafe.png", content_type: "image/png")
-    listing.save
-
     puts "Listing created"
     # Generate (0-5) bookings per listing
     rand(5).times do
