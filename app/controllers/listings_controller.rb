@@ -5,6 +5,11 @@ class ListingsController < ApplicationController
     @listing = Listing.new
     authorize @listing
     @listings = policy_scope(Listing)
+    @time = Time.now.strftime('%H:%M')
+    arr = @time.split(':')
+    arr[0] = arr[0].to_i
+    arr[0] += 2
+    @newtime = "#{arr[0]}:".concat(arr[1])
   end
 
   def index

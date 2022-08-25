@@ -8,10 +8,15 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 100px;
 }
 
 .navbar {
   height: 147px;
-  margin: 0;
+  a {
+    margin: 0 2px;
+  }
+  ul {
+    align-items: center;
+  }
 }

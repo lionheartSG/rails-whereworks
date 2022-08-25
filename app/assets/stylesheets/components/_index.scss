@@ -6,6 +6,7 @@
 @import "button";
 @import "banner";
 @import "footer";
+@import "card";
 @import "listform";
 
 h1 {
@@ -14,4 +15,8 @@ h1 {
 
 h2 {
   font-size: 32px;
+}
+
+p {
+  margin: 0;
 }

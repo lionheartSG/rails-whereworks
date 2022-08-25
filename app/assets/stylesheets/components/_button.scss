@@ -6,3 +6,15 @@
   width: 77px;
   font-size: 12px;
 }
+
+.btn-banner {
+  color: white;
+  background-color: #B56576;
+  width: 130px;
+  margin: 0;
+  border: 0px;
+  height: 50px;
+  &:hover{
+    background-color: #6D597A;
+  }
+}
