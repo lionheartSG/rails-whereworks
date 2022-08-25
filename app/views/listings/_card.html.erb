@@ -4,11 +4,13 @@
       <div class="listing-card">
         <div class="img-placeholder"></div>
         <div class="content-wrap">
-          <p><%= listing.name %></p>
+          <p class="listing-name"><%= listing.name %></p>
           <p><%= listing.zone %></p>
           <p><%= listing.booking_type %></p>
-          <p>10 tables available</p>
-          <p><%= listing.price %></p>
+          <div class="bottom-row">
+            <p>10 tables available</p>
+            <p class="listing-price"><%= listing.price %></p>
+          </div>
         </div>
       </div>
     <% end %>
