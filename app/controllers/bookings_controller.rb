@@ -28,7 +28,14 @@ class BookingsController < ApplicationController
     redirect_to booking_path(@booking)
   end
 
+  def confirm
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = params[:status]
+    @booking.save!
+    redirect_to booking_path(@booking)
 
+  end
 
 private
 
@@ -37,6 +44,6 @@ private
   # end
 
   def booking_params
-    params.require(:booking).permit(:quantity, :reservation_startdatetime, :reservation_enddatetime)
+    params.require(:booking).permit(:quantity, :reservation_startdatetime, :reservation_enddatetime, :status)
   end
 end

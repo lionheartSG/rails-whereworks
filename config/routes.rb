@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   resources :listings do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:update, :edit, :show]
+  resources :bookings, only: [:update, :edit, :show] do
+    member do
+    get :confirm
+    end
+  end
 end

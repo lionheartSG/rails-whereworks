@@ -9,4 +9,10 @@ class BookingPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def confirm?
+    record.user == user
+  end
+
+
 end
