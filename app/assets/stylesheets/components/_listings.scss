@@ -18,9 +18,14 @@
     }
     .content-wrap {
       margin: 20px 10px;
-      p {
+      p, a {
+        text-decoration: none;
+        color: black;
         margin: 0;
         font-size: 12px;
+      }
+      a:hover{
+        color: #f7616b;
       }
       .listing-name {
         font-weight: bold;
