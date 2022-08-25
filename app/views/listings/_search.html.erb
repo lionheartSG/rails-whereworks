@@ -1,0 +1,7 @@
+    <%= form_with url: listings_path, method: :get do |f| %>
+      <%= f.text_field :name, placeholder: "Location", class: "input-text" %>
+      <%= f.date_field :date, value: Date.today %>
+      <%= f.time_field :start_time, value: time %>
+      <%= f.time_field :end_time, value: newtime %>
+      <%= f.submit "Search", class: "btn btn-banner" %>
+      <% end %>

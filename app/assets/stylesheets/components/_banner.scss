@@ -11,19 +11,6 @@
   }
 }
 
-.banner-form form {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  input {
-    height: 50px;
-    padding-left: 4px;
-  }
-  .input-text {
-    flex-grow: 1;
-  }
-}
-
 .tagline {
   height: 30vh;
   background-color: #f7616b;
