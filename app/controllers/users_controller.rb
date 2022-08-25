@@ -8,7 +8,6 @@ class UsersController < ApplicationController
       @active = @user.bookings.where(status: "Active")
       @pending = @user.bookings.where(status: "Pending")
       @completed = @user.bookings.where(status: "Completed")
-      raise
     else
       redirect_to root_path
     end
