@@ -1,0 +1,16 @@
+.btn-wrap {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: right;
+  button {
+    border: none;
+    width: 120px;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    svg {
+      width: 15px;
+      margin: auto;
+    }
+  }
+}
