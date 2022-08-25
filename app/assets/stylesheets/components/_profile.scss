@@ -1,0 +1,19 @@
+.user-profile {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.profile {
+  width: 30%;
+  margin-top: 40px;
+  h1 {
+    margin: 10px 0;
+  }
+}
+
+.profile-bookings {
+  width: 70%;
+  padding-left: 40px;
+
+}
