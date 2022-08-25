@@ -6,6 +6,14 @@ class UserPolicy < ApplicationPolicy
     # end
   end
 
+  def bookings?
+    true
+  end
+
+  def listings?
+    true
+  end
+
   def show?
     true
   end

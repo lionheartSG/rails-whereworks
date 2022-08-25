@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[show]
+  skip_before_action :authenticate_user!, only: %i[show bookings listings]
 
-  def show
+  def bookings
     if user_signed_in?
       @user = current_user
       authorize @user
@@ -11,5 +11,27 @@ class UsersController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def listings
+    if user_signed_in?
+      @user = current_user
+      @listings = @user.listings
+      @pending = []
+      authorize @user
+      @listings.each do |listing|
+        listing.bookings.each do |booking|
+          if booking.status == "Pending"
+            @pending << booking
+          end
+        end
+      end
+    else
+      redirect_to root_path
+    end
+
+  end
+
+  def show
   end
 end

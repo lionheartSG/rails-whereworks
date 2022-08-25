@@ -1,0 +1,24 @@
+<%= render "indexnavbar" %>
+<div class="container user-profile">
+  <div class="profile">
+    <div class="photo-test">
+      <p>Photo goes here</p>
+    </div>
+    <h1 class="name-text"><%= @user.first_name %> <%= @user.last_name %></h1>
+  </div>
+  <div class="profile-bookings">
+    <h2>For Your Action</h2>
+    <div class="booking-cards pending-booking">
+      <% @pending.each do |booking|  %>
+        <div class="booking-card">
+          <p><strong><%= booking.listing.name %></strong></p>
+          <p>Start: <%= booking.reservation_startdatetime %></p>
+          <p>End: <%= booking.reservation_enddatetime %></p>
+          <p>Quantity: <%= booking.quantity %></p>
+          <br>
+          <%= link_to "More Information", booking_path(booking) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
