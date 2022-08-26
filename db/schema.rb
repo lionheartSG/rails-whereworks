@@ -43,14 +43,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_26_025036) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.datetime "reservation_startdatetime"
-    t.datetime "reservation_enddatetime"
     t.bigint "user_id", null: false
     t.bigint "listing_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity"
     t.string "status", default: "Pending"
+    t.date "date"
+    t.time "start_time"
+    t.time "end_time"
     t.index ["listing_id"], name: "index_bookings_on_listing_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -75,6 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_26_025036) do
     t.string "zone"
     t.float "latitude"
     t.float "longitude"
+
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
