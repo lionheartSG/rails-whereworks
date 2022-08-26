@@ -59,10 +59,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn navbar-btn" %>
+              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn navbar-btn", data: { turbo_frame: "remote_modal" } %>
             </li>
             <li class="nav-item">
-              <%= link_to "Log In", new_user_session_path, class: "nav-link btn navbar-btn", data: { turbo_frame: "remote_modal" }%>
+              <%= link_to "Log In", new_user_session_path, class: "nav-link btn navbar-btn", data: { turbo_frame: "remote_modal" } %>
             </li>
             <!--li class="nav-item"-->
             <!--/li-->
