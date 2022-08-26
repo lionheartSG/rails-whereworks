@@ -13,10 +13,11 @@
     <%= image_tag "defaultavatar.png" %>
   <% end %>
 
-
+<div>
 <h3>Update your Avatar Photo</h3>
 <%= simple_form_for(@user) do |f| %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "Submit Photo", class: "btn navbar-btn" %>
   <% end %>
+</div>
 </div>
