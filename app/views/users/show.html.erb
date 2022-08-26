@@ -1,13 +1,18 @@
 <%= render "indexnavbar" %>
-<div class="container ">
+
+<div class="profile" >
   <%# <div class="profile"> %>
     <%# <div class="photo-test"> %>
       <%# <p>Photo goes here</p> %>
     <%# </div> %>
 
 
+  <% if current_user.photo.attached? %>
+    <%=  cl_image_tag current_user.photo.key, width: 300, height: 300, crop: :thumb, gravity: :face %>
+  <% else %>
+    <%= image_tag "defaultavatar.png" %>
+  <% end %>
 
- <%= cl_image_tag @user.photo.key, width: 300, height: 300, crop: :thumb, gravity: :face %>
 
 <h3>Update your Avatar Photo</h3>
 <%= simple_form_for(@user) do |f| %>
