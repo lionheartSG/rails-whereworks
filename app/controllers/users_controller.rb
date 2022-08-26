@@ -45,6 +45,11 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def after_sign_up_path_for(resource)
+    listings_path
+  end
+
+
   private
 
   def user_params
