@@ -1,23 +1,19 @@
 <%= render "indexnavbar" %>
 
 <div class="container">
-
   <div class="profile-wrap">
     <div class="img-placeholder"></div>
     <h1 class="name-text"><%= @user.first_name %> <%= @user.last_name %></h1>
   </div>
-
   <div class="section-wrap">
-
     <div class="cards-wrap">
       <h2>For Your Action</h2>
       <div class="card-wrap">
         <% @pending.each do |booking| %>
           <%= link_to booking_path(booking)  do %>
             <div class="card">
-              <p class="listing-name"><%= booking.listing.name %></p>
-              <p><%= booking.listing.address %></p>
-              <br>
+              <p class="name"><%= booking.listing.name %></p>
+              <p class="address"><%= booking.listing.address %></p>
               <p>Date: <%= booking.date %></p>
               <p>Start: <%= booking.start_time %></p>
               <p>End: <%= booking.end_time %></p>
@@ -27,21 +23,18 @@
         <% end %>
       </div>
     </div>
-
     <div class="cards-wrap">
       <h2>All Listings</h2>
       <div class="card-wrap">
         <% @listings.each do |listing| %>
         <%= link_to listing_path(listing) do %>
         <div class="card">
-          <p class="listing-name"><%= listing.name %></p>
-          <p><%= listing.address %></p>
+          <p class="name"><%= listing.name %></p>
+          <p class="address"><%= listing.address %></p>
         </div>
         <% end %>
         <% end %>
       </div>
     </div>
-
   </div>
-
 </div>
