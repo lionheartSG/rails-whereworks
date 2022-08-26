@@ -20,7 +20,15 @@ class ListingsController < ApplicationController
       else
         flash[:alert] = 'No results found!'
       end
+
+      unless params[:listing][:min].nil? && params[:listing][:max].nil?
+        min = params[:listing][:min].to_i
+        max = params[:listing][:max].to_i
+        @listings = Listing.near(params[:listing][:address], 2).where("price >= ?", min).where("price <= ?", max)
+
+      end
     end
+
     @user = current_user
     @markers = @listings.geocoded.map do |listing|
       {

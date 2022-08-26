@@ -39,4 +39,21 @@
     <% end %>
   </div>
 </div>
+
+<%= simple_form_for :listing, url: listings_path, method: :get do |f| %>
+  <%= f.number_field :min,
+    in: 5.00..30.00, step: 0.50,
+    class: "form-control",
+    value: 5
+  %>
+  <%= f.number_field :max,
+    in: 5.00..30.00, step: 0.50,
+    class: "form-control",
+    value: 30
+  %>
+  <% if params[:listing].present? %>
+    <%= f.hidden_field :address, value: params[:listing][:address] %>
+  <% end %>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>
 <%= render "footer" %>
