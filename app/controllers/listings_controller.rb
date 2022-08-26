@@ -14,6 +14,7 @@ class ListingsController < ApplicationController
 
   def index
     @listings = policy_scope(Listing)
+    @user = current_user
     if Listing.near(params[:listing][:address], 2).present?
       @listings = Listing.near(params[:listing][:address], 2)
     else
