@@ -1,8 +1,6 @@
 <h3><%= @booking.listing.price %></h3>
 
 <%= simple_form_for[@listing, @booking] do |f| %>
-  <%= f.input :reservation_startdatetime %>
-  <%= f.input :reservation_enddatetime %>
   <%= f.input :quantity %>
   <%= f.submit "Reserve", class: "btn navbar-btn" %>
   <% end %>
