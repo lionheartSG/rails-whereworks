@@ -1,15 +1,16 @@
 .container {
   width: 95%;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .content-section-wrap {
   width: 50%;
   height: 75vh;
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px;
   .content-wrap {
-    h2 {
-      margin-top: 20px;
-    }
     p {
       margin: 10px 0;
     }
@@ -29,9 +30,9 @@
 }
 
 .booking-form {
-  width: calc(50% - 30px);
+  width: calc(50% - 20px);
   height: 75vh;
-  margin-left: 30px;
+  margin-left: 20px;
   background-color: white;
   border: none;
   border-radius: 5px;
@@ -43,17 +44,13 @@
 
 .input-wrap {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 20px;
-  .time-wrap {
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-  }
-  .quantity-wrap {
-    width: calc(40% - 60px);
-    .quantity-input {
-      max-width: 160px;
+  .input {
+    width: calc(33.33% - 10px);
+    .quantity {
+      max-width: calc(100% - 10px);
     }
   }
 }
@@ -70,4 +67,19 @@
 .btn-submit:hover {
   background-color: transparent;
   color: #2C5173;
+  transition: 0.5s;
+}
+
+// Responsive
+
+@media (max-width: 992px) {
+  .content-section-wrap {
+    width: 100%;
+    height: 100%;
+  }
+  .booking-form {
+    width: 100%;
+    height: 100%;
+    margin: 30px 0 0 0;
+  }
 }

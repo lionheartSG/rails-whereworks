@@ -1,7 +1,7 @@
 <div class="container">
   <div class="content-section-wrap">
     <div class="content-wrap">
-      <h2><%= @listing.name %></h2>
+      <h1><%= @listing.name %></h1>
       <p class="listing-address"><%= @listing.address %></p>
       <p class="listing-desc"><%= @listing.description %></p>
     </div>
@@ -18,12 +18,14 @@
     <%= simple_form_for([@listing, @booking]) do |f| %>
       <%= f.input :date, html5: true, input_html: { class: 'date-input' } %>
       <div class="input-wrap">
-        <div class="time-wrap">
-          <%= f.input :start_time, input_html: { class: 'start-input' } %>
-          <%= f.input :end_time, input_html: { class: 'end-input' } %>
+        <div class="input">
+          <%= f.input :start_time %>
         </div>
-        <div class="quantity-wrap">
-          <%= f.input :quantity, input_html: { class: 'quantity-input' } %>
+        <div class="input">
+          <%= f.input :end_time %>
+        </div>
+        <div class="input">
+          <%= f.input :quantity, input_html: { class: 'quantity' } %>
         </div>
       </div>
       <%= f.submit "Book", :class => "btn-submit" %>
