@@ -7,7 +7,7 @@
     </div>
     <div class="img-wrap">
       <% if @listing.photos[0].nil? %>
-        <%= cl_image_tag "07l71vlgt3tel77cjg4ifo6pfefn", class: "cafe-img" %>
+        <%= image_tag "Meeting.png", class: "cafe-img" %>
       <% else %>
         <%= cl_image_tag @listing.photos[0].key, class: "cafe-img" %>
       <% end %>
