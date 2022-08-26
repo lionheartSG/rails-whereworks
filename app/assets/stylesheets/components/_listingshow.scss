@@ -1,24 +1,73 @@
-.listing-content {
+.container {
+  width: 95%;
+  display: flex;
+}
+
+.content-section-wrap {
+  width: 50%;
+  height: 75vh;
+  .content-wrap {
+    h2 {
+      margin-top: 20px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    .listing-desc {
+      margin-bottom: 30px;
+    }
+    .listing-address {
+      font-style: italic;
+    }
+  }
+  .img-wrap {
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+  }
+}
+
+.booking-form {
+  width: calc(50% - 30px);
+  height: 75vh;
+  margin-left: 30px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 30px;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.input-wrap {
   display: flex;
   justify-content: space-between;
-}
-
-.listing-name {
-  width: 100%;
-  margin-top: 40px;
-  h1 {
-    margin: 10px 0;
+  margin-top: 20px;
+  .time-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+  }
+  .quantity-wrap {
+    width: calc(40% - 60px);
+    .quantity-input {
+      max-width: 160px;
+    }
   }
 }
 
-.photo-listing {
-  img {
-    width: 800px;
-  }
-
-  p {
-    width: 800px;
-    word-wrap: inherit;
-    flex-wrap: wrap;
-  }
+.btn-submit {
+  width: 130px;
+  height: 50px;
+  margin-top: 20px;
+  background-color: #2C5173;
+  border: solid 2px #2C5173;
+  border-radius: 0;
+  color: white;
+}
+.btn-submit:hover {
+  background-color: transparent;
+  color: #2C5173;
 }
