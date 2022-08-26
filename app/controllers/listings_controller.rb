@@ -20,6 +20,7 @@ class ListingsController < ApplicationController
       else
         flash[:alert] = 'No results found!'
       end
+    end
     @user = current_user
     @markers = @listings.geocoded.map do |listing|
       {
