@@ -13,8 +13,12 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @listing = Listing.new
     @listings = policy_scope(Listing)
+    if Listing.near(params[:listing][:address], 2).present?
+      @listings = Listing.near(params[:listing][:address], 2)
+    else
+      flash[:alert] = 'No results found!'
+    end
     @markers = @listings.geocoded.map do |listing|
       {
         lat: listing.latitude,
