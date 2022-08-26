@@ -18,6 +18,20 @@
             <% else %>
               <%= cl_image_tag listing.photos[0].key, class: "cafe-img" %>
             <% end %>
+        <div class="img-wrap">
+          <% if listing.photos[0].nil? %>
+            <%= cl_image_tag "qaqjtrau1skeg5pfk7nr", class: "cafe-img" %>
+          <% else %>
+            <%= cl_image_tag listing.photos[0].key, class: "cafe-img" %>
+          <% end %>
+        </div>
+        <div class="content-wrap">
+          <%= link_to listing.name, listing_path(listing), class: "listing-name" %>
+          <p><%= listing.zone %></p>
+          <p><%= listing.booking_type %></p>
+          <div class="bottom-row">
+            <p>10 tables available</p>
+            <p class="listing-price"><%= listing.price %></p>
           </div>
           <div class="content-wrap">
             <p class="listing-name"><%= listing.name %></p>
