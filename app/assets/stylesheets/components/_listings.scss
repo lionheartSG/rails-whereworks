@@ -5,38 +5,42 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .listing-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
   .listing-card {
     background-color: white;
-    .img-wrap {
-      .cafe-img {
-        max-width: 100%;
-      }
-    }
-    .content-wrap {
-      margin: 20px 10px;
-      p, a {
-        text-decoration: none;
-        color: black;
-        margin: 0;
-        font-size: 12px;
-      }
-      a:hover{
-        color: #f7616b;
-      }
-      .listing-name {
-        font-weight: bold;
-      }
-      .bottom-row {
-        display: flex;
-        justify-content: space-between;
-        .listing-price {
-          font-weight: bold;
-        }
-      }
+  }
+  .listing-card:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+  }
+}
+
+.img-wrap .cafe-img {
+  max-width: 100%;
+}
+
+.content-wrap {
+  margin: 20px 10px;
+  p {
+    color: black;
+    margin: 0;
+    font-size: 14px;
+  }
+  .listing-name {
+    font-weight: bold;
+  }
+  .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    .listing-price {
+      font-weight: bold;
     }
   }
 }
