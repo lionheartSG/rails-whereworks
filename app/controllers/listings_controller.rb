@@ -15,6 +15,18 @@ class ListingsController < ApplicationController
   def index
     @listings = policy_scope(Listing)
     @user = current_user
+    if Listing.near(params[:listing][:address], 2).present?
+      @listings = Listing.near(params[:listing][:address], 2)
+    else
+      flash[:alert] = 'No results found!'
+    end
+    @markers = @listings.geocoded.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { listing: listing })
+      }
+    end
   end
 
   def show
@@ -42,6 +54,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :address, :listing_type, :booking_type, :description, :price, :zone, photos: [])
+    params.require(:listing).permit(:name, :address, :listing_type, :booking_type, :description, :price, photos: [])
   end
 end

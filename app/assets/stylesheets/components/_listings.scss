@@ -1,42 +1,85 @@
-
 .container {
   width: 95%;
-  margin: 80px auto;
+  margin: 25px auto 100px auto;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.btn-wrap {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: right;
+  button {
+    border: none;
+    border-radius: 5px;
+    width: 120px;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    svg {
+      width: 15px;
+      margin: auto;
+    }
+  }
+}
+
+.map {
+  width: 50%;
+  height: 75vh;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .listing-container {
+  width: 50%;
+  height: 75vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 30px;
+  overflow: scroll;
   .listing-card {
     background-color: white;
-    .img-wrap {
-      .cafe-img {
-        max-width: 100%;
-      }
-    }
-    .content-wrap {
-      margin: 20px 10px;
-      p, a {
-        text-decoration: none;
-        color: black;
-        margin: 0;
-        font-size: 12px;
-      }
-      a:hover{
-        color: #f7616b;
-      }
-      .listing-name {
-        font-weight: bold;
-      }
-      .bottom-row {
-        display: flex;
-        justify-content: space-between;
+    margin-left: 25px;
+    border-radius: 5px;
+    a {
+      display: flex;
+      .content-wrap {
+        margin: 10px 20px;
+        width: 50%;
+        position: relative;
+        p {
+          color: black;
+          margin: 0;
+          font-size: 14px;
+        }
+        .listing-name {
+          font-size: 16px;
+          font-weight: bold;
+        }
         .listing-price {
           font-weight: bold;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+      .img-wrap {
+        width: 50%;
+        border-radius: 5px 0 0 5px;
+        .cafe-img {
+          max-width: 100%;
+          border-radius: 5px 0 0 5px;
         }
       }
     }
+  }
+  .listing-card:hover {
+    transform: scale(1.02);
+    transition: 0.5s;
   }
 }
