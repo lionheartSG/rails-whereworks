@@ -1,0 +1,23 @@
+.booking-form {
+  width: 370px;
+  border: 1px solid grey;
+  border-radius: 5px;
+
+  input, select {
+    border-radius: 5px;
+  }
+
+  .date {
+    background: none;
+    input {
+      padding-right: 8px;
+    }
+  }
+
+  .booking_quantity {
+    input {
+      margin: 0 4px;
+      width: 362px !important;
+    }
+  }
+}

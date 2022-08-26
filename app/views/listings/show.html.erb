@@ -1,18 +1,29 @@
 <%= render "indexnavbar" %>
 
 <div class="container">
-  <h1><%= @listing.name %></h1>
-  <p><%= @listing.description %></p>
-  <div class="booking-form">
-  <%= simple_form_for([@listing, @booking]) do |f| %>
-          <%= f.input :reservation_startdatetime %>
-          <%= f.input :reservation_enddatetime %>
-          <%= f.input :quantity %>
-          <%= f.submit %>
-          <% end %>
+  <div class="listing-name">
+    <h1><%= @listing.name %></h1>
+  </div>
+  <div class="listing-content">
+    <div class="photo-listing">
+      <% if @listing.photos[0].nil? %>
+        <%= cl_image_tag "07l71vlgt3tel77cjg4ifo6pfefn", class: "cafe-img" %>
+      <% else %>
+        <%= cl_image_tag @listing.photos[0].key, class: "cafe-img" %>
+      <% end %>
+      <p><%= @listing.description %></p>
+    </div>
+
+    <div class="booking-form">
+      <%= simple_form_for([@listing, @booking]) do |f| %>
+        <%= f.input :date, html5: true %>
+        <%= f.input :start_time %>
+        <%= f.input :end_time %>
+        <%= f.input :quantity %>
+        <%= f.submit %>
+        <% end %>
+    </div>
   </div>
 </div>
-
-
 
 <%= render "footer" %>
