@@ -14,6 +14,7 @@ class ListingsController < ApplicationController
 
   def index
     @listings = policy_scope(Listing)
+    @user = current_user
   end
 
   def show

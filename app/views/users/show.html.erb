@@ -1,0 +1,17 @@
+<%= render "indexnavbar" %>
+<div class="container ">
+  <%# <div class="profile"> %>
+    <%# <div class="photo-test"> %>
+      <%# <p>Photo goes here</p> %>
+    <%# </div> %>
+
+
+
+ <%= cl_image_tag @user.photo.key, width: 300, height: 300, crop: :thumb, gravity: :face %>
+
+<h3>Update your Avatar Photo</h3>
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Submit Photo", class: "btn navbar-btn" %>
+  <% end %>
+</div>

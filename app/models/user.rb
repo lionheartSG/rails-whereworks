@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :listings, dependent: :destroy
   has_many :bookings
+
+  has_one_attached :photo
   # validates :first_name, :last_name, presence: true, length: { minimum: 2 }
   # validates :email, uniqueness: true, format: { with: /\A.*@.*\.com\z/ }
 end
