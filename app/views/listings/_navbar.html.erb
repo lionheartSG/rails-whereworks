@@ -13,8 +13,8 @@
               <%= link_to "+ Create Listing", new_listing_path, class: "nav-link btn navbar-btn listing-btn"  %>
             </li>
             <li class="nav-item dropdown">
-               <% if @user.photo.attached? %>
-              <%=  cl_image_tag(@user.photo.key, width: 50, height: 40, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+               <% if current_user.photo.attached? %>
+              <%=  cl_image_tag(current_user.photo.key, width: 50, height: 40, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
             <% else %>
               <%= image_tag "defaultavatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
