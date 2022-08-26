@@ -1,0 +1,24 @@
+.listing-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listing-name {
+  width: 100%;
+  margin-top: 40px;
+  h1 {
+    margin: 10px 0;
+  }
+}
+
+.photo-listing {
+  img {
+    width: 800px;
+  }
+
+  p {
+    width: 800px;
+    word-wrap: inherit;
+    flex-wrap: wrap;
+  }
+}
