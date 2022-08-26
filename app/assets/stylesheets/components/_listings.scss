@@ -1,11 +1,28 @@
 .container {
   width: 95%;
-  margin: 80px auto;
+  margin: 70px auto;
   padding: 0;
 }
 
 a {
   text-decoration: none;
+}
+
+.btn-wrap {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: right;
+  button {
+    border: none;
+    width: 120px;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    svg {
+      width: 15px;
+      margin: auto;
+    }
+  }
 }
 
 .listing-container {
@@ -16,7 +33,7 @@ a {
     background-color: white;
   }
   .listing-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
     transition: 0.5s;
   }
 }
