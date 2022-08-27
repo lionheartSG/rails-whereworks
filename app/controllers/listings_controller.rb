@@ -14,20 +14,30 @@ class ListingsController < ApplicationController
 
   def index
     @listings = policy_scope(Listing)
-    unless params[:listing].nil?
-      if Listing.near(params[:listing][:address], 2).present?
-        @listings = Listing.near(params[:listing][:address], 2)
-      else
-        flash[:alert] = 'No results found!'
-      end
 
-      unless params[:listing][:min].nil? && params[:listing][:max].nil?
+    unless params[:listing].nil?
+
+      @listings = Listing.near(params[:listing][:address], 2) if params[:listing][:address].present?
+
+      if params[:listing][:min].present? && params[:listing][:max].present?
         min = params[:listing][:min].to_i
         max = params[:listing][:max].to_i
-        @listings = Listing.near(params[:listing][:address], 2).where("price >= ?", min).where("price <= ?", max)
 
+        @listings = if Listing.near(params[:listing][:address], 2).present?
+                      Listing.near(params[:listing][:address], 2).where("price >= ?", min).where("price <= ?", max)
+                    else
+                      Listing.where("price >= ?", min).where("price <= ?", max)
+                    end
       end
     end
+
+    if @listings.empty?
+      @listings = policy_scope(Listing)
+
+      flash[:alert] = 'No results found!'
+    end
+
+
 
     @user = current_user
     @markers = @listings.geocoded.map do |listing|
