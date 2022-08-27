@@ -16,13 +16,13 @@
   <div class="booking-form">
     <h2>Make a reservation</h2>
     <%= simple_form_for([@listing, @booking]) do |f| %>
-      <%= f.input :date, html5: true, input_html: { class: 'date-input' } %>
+      <%= f.input :date, html5: true, input_html: { class: 'date-input', value: Date.today } %>
       <div class="input-wrap">
         <div class="input">
-          <%= f.input :start_time %>
+          <%= f.input :start_time, input_html: { value: @time } %>
         </div>
         <div class="input">
-          <%= f.input :end_time %>
+          <%= f.input :end_time, input_html: { value: @newtime } %>
         </div>
         <div class="input">
           <%= f.input :quantity, input_html: { class: 'quantity' } %>

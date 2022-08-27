@@ -1,11 +1,22 @@
 <h1>Your booking is <%= @booking.status.downcase %>.</h1>
 <h3><%= @booking.listing.name %></h3>
-<p>Start: <%= @booking.reservation_startdatetime %></p>
-<p>End: <%= @booking.reservation_enddatetime %></p>
+<p>Date: <%= @booking.date %></p>
+<p>Start: <%= @booking.start_time %></p>
+<p>End: <%= @booking.end_time %></p>
 <p>Booking Type: <%= @booking.listing.booking_type %></p>
 <p>Quantity: <%= @booking.quantity %></p>
 <p>Price: <%= @booking.listing.price %></p>
 
-<%= link_to "Confirm", confirm_booking_path(@booking, status: "Active"), method: :patch, class: "btn btn-primary"%>
-
-<%= link_to "Cancel", cancel_booking_path(@booking, status: "Cancelled"), method: :patch, class: "btn btn-primary"%>
+<% if @booking.listing.user == current_user %>
+  <%= link_to "Confirm", confirm_booking_path(@booking, status: "Active"), method: :patch, class: "btn btn-primary"%>
+  <%= link_to "Reject", cancel_booking_path(@booking, status: "Cancelled"), method: :patch, class: "btn btn-primary"%>
+  <% if @booking.listing.bookings.where(date: @booking.date, status: "Active").present? %>
+    <h3>Here are other bookings for this listing today:</h3>
+    <% @booking.listing.bookings.where(date: @booking.date, status: "Active").each do |booking| %>
+    <p><%= booking.start_time %> - <%= booking.end_time %></p>
+    <p>Booked by <%= booking.user.first_name.capitalize %> <%= booking.user.last_name.capitalize %></p>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to "Cancel", cancel_booking_path(@booking, status: "Cancelled"), method: :patch, class: "btn btn-primary"%>
+<% end %>
