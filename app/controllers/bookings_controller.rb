@@ -46,7 +46,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = params[:status]
     @booking.save!
-    redirect_to user_path(current_user)
+    redirect_to listings_user_path(current_user)
   end
 
   def cancel
@@ -54,7 +54,11 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = params[:status]
     @booking.save!
-    redirect_to bookings_user_path(current_user)
+    if @booking.user == user
+      redirect_to bookings_user_path(current_user)
+    else
+      redirect_to listings_user_path(current_user)
+    end
   end
 
 private
@@ -64,6 +68,6 @@ private
   # end
 
   def booking_params
-    params.require(:booking).permit(:quantity, :reservation_startdatetime, :reservation_enddatetime, :status)
+    params.require(:booking).permit(:quantity, :date, :start_time, :end_time, :status)
   end
 end

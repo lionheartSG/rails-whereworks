@@ -11,8 +11,9 @@
       <% @active.each do |booking|  %>
         <div class="booking-card">
           <p><strong><%= booking.listing.name %></strong></p>
-          <p>Start: <%= booking.reservation_startdatetime %></p>
-          <p>End: <%= booking.reservation_enddatetime %></p>
+          <p>Date: <%= booking.date %></p>
+          <p>Start: <%= booking.start_time %></p>
+          <p>End: <%= booking.end_time %></p>
           <p>Quantity: <%= booking.quantity %></p>
           <br>
           <%= link_to "More Information", booking_path(booking) %>
@@ -24,8 +25,9 @@
       <% @pending.each do |booking|  %>
         <div class="booking-card">
           <p><strong><%= booking.listing.name %></strong></p>
-          <p>Start: <%= booking.reservation_startdatetime %></p>
-          <p>End: <%= booking.reservation_enddatetime %></p>
+          <p>Date: <%= booking.date %></p>
+          <p>Start: <%= booking.start_time %></p>
+          <p>End: <%= booking.end_time %></p>
           <p>Quantity: <%= booking.quantity %></p>
           <br>
           <%= link_to "More Information", booking_path(booking) %>
@@ -37,8 +39,9 @@
       <% @completed.each do |booking|  %>
         <div class="booking-card">
           <p><strong><%= booking.listing.name %></strong></p>
-          <p>Start: <%= booking.reservation_startdatetime %></p>
-          <p>End: <%= booking.reservation_enddatetime %></p>
+          <p>Start: <%= booking.date %></p>
+          <p>Start: <%= booking.start_time %></p>
+          <p>End: <%= booking.end_time %></p>
           <p>Quantity: <%= booking.quantity %></p>
           <br>
           <%= link_to "More Information", booking_path(booking) %>

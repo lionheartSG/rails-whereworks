@@ -7,7 +7,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    record.listing.user == user
+    (record.listing.user == user) || (record.user == user)
   end
 
   def create?
