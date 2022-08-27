@@ -60,9 +60,16 @@
 }
 
 .form-control {
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .form.form-select {
-  border-radius: 10px;
+  border-radius: 4px;
+}
+
+#listform {
+
+  .mapboxgl-ctrl-geocoder {
+    width: 280px;
+  }
 }
