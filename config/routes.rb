@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:update, :edit, :show] do
     member do
-      get :confirm, :cancel
+      get :confirm, :cancel, :complete
     end
   end
 end
