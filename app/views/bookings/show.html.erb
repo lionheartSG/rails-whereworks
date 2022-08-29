@@ -55,9 +55,10 @@
     </div>
 
     <div class="user-reviews">
-      <p>Date:</p>
-      <p>User Rating:</p>
-      <p>User Comment:</p>
+      <% @user.bookings.each do |booking| %>
+        <p><%= booking.user_rating %></p>
+        <p><%= booking.user_review %></p>
+      <% end %>
     </div>
 
   </div>
