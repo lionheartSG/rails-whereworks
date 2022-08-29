@@ -21,11 +21,13 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
+    flash[:alert] = 'You have successfully logged in! Welcome!'
     listings_path
   end
 
   def after_sign_out_path_for(resource)
-    listings_path status: :see_other
+    flash[:alert] = 'You have successfully logged out! Goodbye!'
+    root_path
   end
 
   private
