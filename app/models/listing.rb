@@ -4,6 +4,7 @@ class Listing < ApplicationRecord
 
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_many :listing_reviews, dependent: :destroy, through: :bookings
   has_many_attached :photos
   has_many :listing_reviews, dependent: :destroy, through: :bookings
   geocoded_by :address
