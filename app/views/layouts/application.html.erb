@@ -34,6 +34,12 @@
             <% else %>
               <%= image_tag "defaultavatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
+            <% if  current_user.bookings.where(status: "Active").present? %>
+              <div class="badge-notif-green"> </div>
+            <% end %>
+            <% if @pending.present? %>
+              <div class="badge-notif-red"> </div>
+            <% end %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
                 <%= link_to "My Listings", listings_user_path(current_user), class: "dropdown-item" %>

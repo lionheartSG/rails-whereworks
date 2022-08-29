@@ -1,1 +1,10 @@
-// Specific CSS for your home-page
+#home {
+  width: 95%;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+    h1 {
+      margin-top: 10px;
+    }
+  }
