@@ -72,6 +72,13 @@
   transition: 0.5s;
 }
 
+.review-card {
+  border: solid 2px#F4F4F4;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 12px 0;
+}
+
 // Responsive
 
 @media (max-width: 992px) {
