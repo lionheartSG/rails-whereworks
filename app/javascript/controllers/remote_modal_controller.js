@@ -2,20 +2,25 @@ import { Controller } from "@hotwired/stimulus"
 import { Modal } from "bootstrap"
 
 export default class extends Controller {
+  static targets = ['modal']
   connect() {
     this.modal = new Modal(this.element)
     this.modal.show()
   }
 
-  hideBeforeRender(event) {
-    if (this.isOpen()) {
-      event.preventDefault()
-      this.element.addEventListener('hidden.bs.modal', event.detail.resume)
-      this.modal.hide()
-    }
+  close() {
+  console.log("helloooo")
+  location.reload();
   }
 
-  isOpen() {
-    return this.element.classList.contains("show")
-  }
+  // hideBeforeRender(event) {
+  //   if (this.isOpen()) {
+  //     event.preventDefault()
+  //     this.element.addEventListener('hidden.bs.modal', event.detail.resume)
+  //     this.modal.hide()
+  //   }
+  // }
+
+  // isOpen() {
+  //   return this.element.classList.contains("show")
 }
