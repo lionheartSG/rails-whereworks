@@ -1,0 +1,19 @@
+.badge-notif-red {
+  position: absolute;
+  background-color: rgb(200, 41, 41);
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: -3px;
+  right: -3px;
+}
+
+.badge-notif-green {
+  position: absolute;
+  background-color: rgb(33, 213, 108);
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: -3px;
+  right: -3px;
+}
