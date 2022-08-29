@@ -15,11 +15,10 @@ class BookingsController < ApplicationController
   #   @booking = Booking.new
   # end
 
-
-
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
+    @user = @booking.user
   end
 
   def create
