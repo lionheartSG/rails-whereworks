@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
-    @user = @booking.user
+    @reviews = UserReview.for(@booking.user)
   end
 
   def create

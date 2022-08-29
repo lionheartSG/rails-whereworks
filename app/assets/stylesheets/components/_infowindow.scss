@@ -1,0 +1,22 @@
+.info-window {
+  height: 130px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  a {
+    line-height: 15px;
+    align-self: flex-end;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #2C5173;
+    border: solid 2px #2C5173;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+}
