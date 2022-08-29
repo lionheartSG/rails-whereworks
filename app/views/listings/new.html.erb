@@ -1,5 +1,11 @@
 <%= render "remote_modal", title: "Welcome to WhereWorks!" do %>
 
+  <% if current_user.photo.attached? %>
+    <%=  cl_image_tag current_user.photo.key, width: 300, height: 300, crop: :thumb, gravity: :face %>
+  <% else %>
+    <%= image_tag "defaultavatar.png" %>
+  <% end %>
+
   <%= render "form" %>
 
 <% end %>

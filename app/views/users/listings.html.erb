@@ -1,7 +1,13 @@
 <div class="container">
 
-  <div class="profile-wrap">
-    <div class="img-placeholder"></div>
+  <%# <div class="profile-wrap">
+    <div class="img-placeholder"></div> %>
+   <div class="profile">
+     <% if current_user.photo.attached? %>
+       <%=  cl_image_tag current_user.photo.key, width: 300, height: 300, crop: :thumb, gravity: :face %>
+      <% else %>
+        <%= image_tag "defaultavatar.png" %>
+      <% end %>
     <h1 class="name-text"><%= @user.first_name %> <%= @user.last_name %></h1>
   </div>
 
