@@ -16,8 +16,7 @@
         <div class="booking-card">
           <p><strong><%= booking.listing.name %></strong></p>
           <p>Date: <%= booking.date %></p>
-          <p>Start: <%= booking.start_time %></p>
-          <p>End: <%= booking.end_time %></p>
+          <p>Time: <%= booking.start_time.strftime('%H:%M') %> - <%= booking.end_time.strftime('%H:%M') %></p>
           <p>Quantity: <%= booking.quantity %></p>
           <br>
           <%= link_to "More Information", booking_path(booking) %>
@@ -30,8 +29,7 @@
         <div class="booking-card">
           <p><strong><%= booking.listing.name %></strong></p>
           <p>Date: <%= booking.date %></p>
-          <p>Start: <%= booking.start_time %></p>
-          <p>End: <%= booking.end_time %></p>
+          <p>Time: <%= booking.start_time.strftime('%H:%M') %> - <%= booking.end_time.strftime('%H:%M') %></p>
           <p>Quantity: <%= booking.quantity %></p>
           <br>
           <%= link_to "More Information", booking_path(booking) %>
@@ -43,9 +41,8 @@
       <% @completed.each do |booking|  %>
         <div class="booking-card">
           <p><strong><%= booking.listing.name %></strong></p>
-          <p>Start: <%= booking.date %></p>
-          <p>Start: <%= booking.start_time %></p>
-          <p>End: <%= booking.end_time %></p>
+          <p>Date: <%= booking.date %></p>
+          <p>Time: <%= booking.start_time.strftime('%H:%M') %> - <%= @booking.end_time.strftime('%H:%M') %></p>
           <p>Quantity: <%= booking.quantity %></p>
           <br>
           <%= link_to "More Information", booking_path(booking) %>

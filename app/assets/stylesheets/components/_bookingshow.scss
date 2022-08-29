@@ -17,6 +17,8 @@
   }
   .booking-confirmations {
     margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
   }
 }
 
@@ -33,6 +35,9 @@
       background-color: grey;
       height: 150px;
       width: 150px;
+      img {
+      max-width: 100%;
+      }
     }
     .name {
       margin-left: 10px;
