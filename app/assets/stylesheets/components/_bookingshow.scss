@@ -1,0 +1,19 @@
+.booking-card {
+  border: solid 1px red;
+}
+
+.user-card {
+  border: solid 1px red;
+  margin-left: 40px;
+  display: flex;
+  .profile-pic {
+    border: solid 1px blue;
+    background-color: grey;
+    height: 150px;
+    width: 150px;
+  }
+  .name {
+    border: solid 1px blue;
+    margin-left: 10px;
+  }
+}
