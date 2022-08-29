@@ -12,18 +12,6 @@ class ListingsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { listing: listing })
       }
     end
-
-    if user_signed_in?
-      @user_listings = current_user.listings
-      @pending = []
-      @user_listings.each do |listing|
-        listing.bookings.each do |booking|
-          if booking.status == "Pending"
-            @pending << booking
-          end
-        end
-      end
-    end
   end
 
   def index
