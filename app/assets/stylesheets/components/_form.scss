@@ -23,3 +23,17 @@
     }
   }
 }
+
+.btn-wrap {
+  .listing{
+    display: flex;
+    .btn-filter {
+      border: none;
+      border-radius: 5px;
+      justify-content: space-between;
+      background-color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+  }
+}
