@@ -3,11 +3,7 @@
   <div class="booking-card">
     <div class="booking-status">
       <% if current_user == @booking.user %>
-        <% if @booking.status == 'Pending' %>
-          <h2>Your booking is <%= @booking.status.downcase %> for <%= @booking.listing.name %>.</h2>
-        <% else %>
-          <h2>Your booking is <%= @booking.status.downcase %> for <%= @booking.listing.name %>.</h2>
-        <% end %>
+        <h2>Your booking is <%= @booking.status.downcase %> for <%= @booking.listing.name %>.</h2>
       <% else %>
         <h2>You have a <%= @booking.status.downcase %> booking for <%= @booking.listing.name.capitalize %>.</h2>
       <% end %>

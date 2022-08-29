@@ -1,6 +1,12 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 10px;
+  left: 10px;
   z-index: 1000;
+  color: white;
+  background-color: rgba(44, 81, 115, 0.6);
+  transition: opacity 1s ease-out;
+  &:hover {
+    opacity: 0;
+  }
 }
