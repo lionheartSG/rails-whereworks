@@ -1,20 +1,6 @@
 class BookingsController < ApplicationController
   # before_action :set_listing, only: %i[create new]
 
-  # def create
-  #   @booking = Booking.new(booking_params)
-  #   @booking.listing = @listing
-  #   if @booking.listing = @listing
-  #     redirect_to listing_path(@listing)
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #   end
-  # end
-
-  # def new
-  #   @booking = Booking.new
-  # end
-
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
@@ -53,6 +39,18 @@ class BookingsController < ApplicationController
   end
 
   def cancel
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = params[:status]
+    @booking.save!
+    if @booking.user == current_user
+      redirect_to bookings_user_path(current_user)
+    else
+      redirect_to listings_user_path(current_user)
+    end
+  end
+
+  def complete
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.status = params[:status]
