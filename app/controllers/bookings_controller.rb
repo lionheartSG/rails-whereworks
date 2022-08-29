@@ -19,6 +19,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @reviews = UserReview.for(@booking.user)
+    @ratings = []
+    @reviews.each do |review|
+      @ratings << review.user_rating
+    end
   end
 
   def create
