@@ -1,3 +1,5 @@
+<%# _bookingcard.scss %>
+
 <div class="container">
 
   <%# <div class="profile-wrap">
@@ -18,16 +20,14 @@
       <h2>For Your Action</h2>
       <div class="card-wrap">
         <% @pending.each do |booking| %>
-          <%= link_to booking_path(booking)  do %>
-            <div class="card">
-              <p class="listing-name"><%= booking.listing.name %></p>
-              <p><%= booking.listing.address %></p>
-              <br>
-              <p>Date: <%= booking.date %></p>
-              <p>Time: <%= booking.start_time.strftime('%H:%M') %> - <%= booking.end_time.strftime('%H:%M') %></p>
-              <p>Quantity: <%= booking.quantity %></p>
-            </div>
-          <% end %>
+          <div class="card">
+            <p class="listing-name"><%= booking.listing.name %></p>
+            <p><%= booking.listing.address %></p>
+            <p>Date: <%= booking.date %></p>
+            <p>Time: <%= booking.start_time.strftime('%H:%M') %> - <%= booking.end_time.strftime('%H:%M') %></p>
+            <p>Quantity: <%= booking.quantity %></p>
+            <%= link_to "More info", booking_path(booking), class: "more-info" %>
+          </div>
         <% end %>
       </div>
     </div>
@@ -36,12 +36,11 @@
       <h2>All Listings</h2>
       <div class="card-wrap">
         <% @listings.each do |listing| %>
-        <%= link_to listing_path(listing) do %>
         <div class="card">
           <p class="listing-name"><%= listing.name %></p>
           <p><%= listing.address %></p>
+          <%= link_to "More info", listing_path(listing), class: "more-info" %>
         </div>
-        <% end %>
         <% end %>
       </div>
     </div>
