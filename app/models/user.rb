@@ -6,7 +6,10 @@ class User < ApplicationRecord
 
   has_many :listings, dependent: :destroy
   has_many :bookings
+<<<<<<< HEAD
   has_many :user_reviews, dependent: :destroy, through: :bookings
+=======
+>>>>>>> b60683e797f946bb8d27e48d2273f61845d442b3
 
   has_one_attached :photo
   # validates :first_name, :last_name, presence: true, length: { minimum: 2 }
