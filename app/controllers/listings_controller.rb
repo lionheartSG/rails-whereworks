@@ -75,9 +75,12 @@ class ListingsController < ApplicationController
     @ratings = []
 
     @listing.bookings.each do |booking|
-      @comments << booking.listing_review.listing_comment
-      @ratings << booking.listing_review.listing_rating
+      if booking.listing_review.present?
+        @comments << booking.listing_review.listing_comment
+        @ratings << booking.listing_review.listing_rating
+      end
     end
+
   end
 
   def new

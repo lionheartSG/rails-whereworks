@@ -30,14 +30,32 @@
       </div>
       <%= f.submit "Book", :class => "btn-submit" %>
       <% end %>
+    <br>
+    <br>
+    <br>
+    <div class="review-card">
+      <% if @ratings.empty? %>
+        <p>There are no ratings currently</p>
+      <% else %>
+        <p>Averate Rating = <%= @ratings.sum / @ratings.length %></p>
+      <% end %>
+      <br>
+      <br>
+      <% if @comments.empty? %>
+        <p>There are no user comments currently</p>
+      <% else %>
+        <% @comments.each do |comment| %>
+          <p><%= comment %></p>
+        <% end %>
+      <% end %>
+      </div>
+
   </div>
+
+
+
 </div>
 
-    <% @comments.each do |comment| %>
-    <p><%= comment %></p>
-    <% end %>
-
-    <p>Averate Rating = <%= @ratings.sum / @ratings.length %></p>
 
 
 <%= render "footer" %>
