@@ -6,7 +6,6 @@ require 'faker'
 
 # Seeding users, listings and bookings
 puts 'Cleaning up database'
-User.destroy_all
 Listing.destroy_all
 Booking.destroy_all
 
@@ -79,7 +78,7 @@ puts 'Booking created'
 ListingReview.create(
   listing_rating: 1,
   listing_comment: 'This sucks!',
-  booking_id: book1
+  booking: book1
 )
 puts 'Review created'
 
@@ -127,7 +126,7 @@ puts 'Booking created'
 ListingReview.create(
   listing_rating: 3,
   listing_comment: 'This is an ok place',
-  booking_id: book2
+  booking: book2
 )
 
 Booking.create(
@@ -195,7 +194,7 @@ book3 = Booking.create(
 ListingReview.create(
   listing_rating: 4,
   listing_comment: 'This is an awesome place',
-  booking_id: book3
+  booking: book3
 )
 
 puts 'Booking created'
