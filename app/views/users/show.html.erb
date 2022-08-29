@@ -1,18 +1,21 @@
+<div class="container">
+
 <div class="profile" >
-  <%# <div class="profile"> %>
     <%# <div class="photo-test"> %>
       <%# <p>Photo goes here</p> %>
-    <%# </div> %>
-
-
   <% if current_user.photo.attached? %>
     <%=  cl_image_tag current_user.photo.key, width: 300, height: 300, crop: :thumb, gravity: :face %>
   <% else %>
     <%= image_tag "defaultavatar.png" %>
   <% end %>
 
-<div>
-<h3>Update your Avatar Photo</h3>
+  <h1 class="name-text"><%= @user.first_name %> <%= @user.last_name %></h1>
+</div>
+
+<br>
+
+<div class="profile-bookings" >
+<h2>Update your Avatar Photo</h2>
 <%= simple_form_for(@user) do |f| %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "Submit Photo", class: "btn navbar-btn" %>
