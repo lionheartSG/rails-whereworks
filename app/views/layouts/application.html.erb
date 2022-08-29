@@ -14,6 +14,19 @@
   </head>
 
   <body>
+
+    <% if user_signed_in? %>
+     <% pending = [] %>
+     <% @current_user.listings.each do |listing| %>
+       <% listing.bookings.each do |booking| %>
+         <% if booking.status == "Pending"%>
+           <% pending << booking %>
+         <% end %>
+       <% end %>
+     <% end %>
+   <% end %>
+
+
   <%= turbo_frame_tag "remote_modal", target: "_top" %>
   <% if user_signed_in? %>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
@@ -34,11 +47,11 @@
             <% else %>
               <%= image_tag "defaultavatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
+            <% if pending.present? %>
+              <div class="badge-notif-red"> </div>
+            <% end %>
             <% if  current_user.bookings.where(status: "Active").present? %>
               <div class="badge-notif-green"> </div>
-            <% end %>
-            <% if @pending.present? %>
-              <div class="badge-notif-red"> </div>
             <% end %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>

@@ -64,6 +64,17 @@ listing_workbuddy = Listing.create(
 )
 puts 'Created listing'
 
+book = Booking.create(
+  date: '10/09/22',
+  start_time: '12:00 PM',
+  end_time: '1:00 PM',
+  quantity: rand(1..5),
+  status: 'Pending',
+  listing: listing_workbuddy,
+  user: user_bob
+)
+puts 'Booking created'
+
 book1 = Booking.create(
   date: '29/08/22',
   start_time: '12:00 PM',
@@ -75,12 +86,26 @@ book1 = Booking.create(
 )
 puts 'Booking created'
 
+UserReview.create(
+  user_rating: 1,
+  user_comment: "What's up with this guy... he brought his own lunch!",
+  booking: book
+)
+puts 'User Review created'
+
 ListingReview.create(
   listing_rating: 1,
   listing_comment: 'This sucks!',
   booking: book1
 )
-puts 'Review created'
+puts 'Listing Review created'
+
+UserReview.create(
+  user_rating: 4,
+  user_comment: "Purchased lots of drinks, didn't leave a mess.",
+  booking: book1
+)
+puts 'User Review created'
 
 user_mary = User.create(
   first_name: 'Mary',
@@ -128,6 +153,14 @@ ListingReview.create(
   listing_comment: 'This is an ok place',
   booking: book2
 )
+puts 'Listing Review created'
+
+UserReview.create(
+  user_rating: 2,
+  user_comment: "Stayed waaaaaaay too long!",
+  booking: book2
+)
+puts 'User Review created'
 
 Booking.create(
   date: '01/09/22',
@@ -136,7 +169,7 @@ Booking.create(
   quantity: rand(1..5),
   status: 'Active',
   listing: listing_sb_fu,
-  user: user_anna,
+  user: user_anna
 )
 puts 'Booking created'
 
@@ -196,6 +229,14 @@ ListingReview.create(
   listing_comment: 'This is an awesome place',
   booking: book3
 )
+puts 'Listing Review created'
+
+UserReview.create(
+  user_rating: 4,
+  user_comment: "Nice person :)",
+  booking: book3
+)
+puts 'User Review created'
 
 puts 'Booking created'
 
