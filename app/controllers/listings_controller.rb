@@ -72,6 +72,14 @@ class ListingsController < ApplicationController
     arr[0] = arr[0].to_i
     arr[0] += 2
     @newtime = "#{arr[0]}:".concat(arr[1])
+
+    @comments = []
+    @ratings = []
+
+    @listing.bookings.each do |booking|
+      @comments << booking.listing_review.listing_comment
+      @ratings << booking.listing_review.listing_rating
+    end
   end
 
   def new

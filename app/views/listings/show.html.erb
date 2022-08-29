@@ -33,4 +33,11 @@
   </div>
 </div>
 
+    <% @comments.each do |comment| %>
+    <p><%= comment %></p>
+    <% end %>
+
+    <p>Averate Rating = <%= @ratings.sum / @ratings.length %></p>
+
+
 <%= render "footer" %>
