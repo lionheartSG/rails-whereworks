@@ -24,8 +24,7 @@
               <p><%= booking.listing.address %></p>
               <br>
               <p>Date: <%= booking.date %></p>
-              <p>Start: <%= booking.start_time %></p>
-              <p>End: <%= booking.end_time %></p>
+              <p>Time: <%= @booking.start_time.strftime('%H:%M') %> - <%= @booking.end_time.strftime('%H:%M') %></p>
               <p>Quantity: <%= booking.quantity %></p>
             </div>
           <% end %>
