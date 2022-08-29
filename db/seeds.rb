@@ -80,7 +80,14 @@ ListingReview.create(
   listing_comment: 'This sucks!',
   booking: book1
 )
-puts 'Review created'
+puts 'Listing Review created'
+
+UserReview.create(
+  user_rating: 4,
+  user_comment: "Purchased lots of drinks, didn't leave a mess.",
+  booking: book1
+)
+puts 'User Review created'
 
 user_mary = User.create(
   first_name: 'Mary',
@@ -128,6 +135,14 @@ ListingReview.create(
   listing_comment: 'This is an ok place',
   booking: book2
 )
+puts 'Listing Review created'
+
+UserReview.create(
+  user_rating: 2,
+  user_comment: "Stayed waaaaaaay too long!",
+  booking: book2
+)
+puts 'User Review created'
 
 Booking.create(
   date: '01/09/22',
@@ -196,6 +211,14 @@ ListingReview.create(
   listing_comment: 'This is an awesome place',
   booking: book3
 )
+puts 'Listing Review created'
+
+UserReview.create(
+  user_rating: 4,
+  user_comment: "Nice person :)",
+  booking: book3
+)
+puts 'User Review created'
 
 puts 'Booking created'
 
