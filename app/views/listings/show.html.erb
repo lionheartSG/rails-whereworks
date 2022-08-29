@@ -31,16 +31,12 @@
       <%= f.submit "Book", :class => "btn-submit" %>
       <% end %>
     <br>
-    <br>
-    <br>
-    <div class="review-card">
       <% if @ratings.empty? %>
         <p>There are no ratings currently</p>
       <% else %>
         <p>Averate Rating = <%= @ratings.sum / @ratings.length %></p>
       <% end %>
-      <br>
-      <br>
+    <div class="review-card">
       <% if @comments.empty? %>
         <p>There are no user comments currently</p>
       <% else %>
