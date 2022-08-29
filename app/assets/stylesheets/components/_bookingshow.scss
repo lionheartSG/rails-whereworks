@@ -26,21 +26,23 @@
   background-color: white;
   border-radius: 5px;
   padding: 25px;
-  display: flex;
   width: calc(70% - 20px);
   .profile-card {
-    width: 100%;
     display: flex;
     .profile-pic {
-      background-color: grey;
-      height: 150px;
       width: 150px;
       img {
-      max-width: 100%;
+        max-width: 100%;
       }
     }
     .name {
       margin-left: 10px;
     }
+  }
+  .user-reviews {
+    border: solid 2px#F4F4F4;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 12px 0;
   }
 }
