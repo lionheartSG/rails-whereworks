@@ -53,7 +53,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = params[:status]
     @booking.save!
-    if @booking.user == user
+    if @booking.user == current_user
       redirect_to bookings_user_path(current_user)
     else
       redirect_to listings_user_path(current_user)

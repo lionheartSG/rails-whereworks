@@ -10,8 +10,8 @@
     <p>Quantity: <%= @booking.quantity %></p>
     <p>Price: <%= @booking.listing.price %></p>
     <% if @booking.listing.user == current_user %>
-      <%= link_to "Confirm", confirm_booking_path(@booking, status: "Active"), method: :patch, class: "btn btn-primary"%>
-      <%= link_to "Reject", cancel_booking_path(@booking, status: "Cancelled"), method: :patch, class: "btn btn-primary"%>
+      <%= link_to "Confirm", confirm_booking_path(@booking, status: "Active"), method: :patch, class: "btn btn-submit"%>
+      <%= link_to "Reject", cancel_booking_path(@booking, status: "Cancelled"), method: :patch, class: "btn btn-submit"%>
       <% if @booking.listing.bookings.where(date: @booking.date, status: "Active").present? %>
         <h3>Here are other bookings for this listing today:</h3>
         <% @booking.listing.bookings.where(date: @booking.date, status: "Active").each do |booking| %>
@@ -20,7 +20,7 @@
       <% end %>
       <% end %>
       <% else %>
-      <%= link_to "Cancel", cancel_booking_path(@booking, status: "Cancelled"), method: :patch, class: "btn btn-primary"%>
+      <%= link_to "Cancel", cancel_booking_path(@booking, status: "Cancelled"), method: :patch, class: "btn btn-submit"%>
       <% end %>
   </div>
 
