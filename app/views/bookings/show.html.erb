@@ -2,13 +2,16 @@
 
   <div class="booking-card">
     <div class="booking-status">
-      <h1>Your booking is <%= @booking.status.downcase %>.</h1>
+      <% if current_user == @booking.user %>
+        <h2>Your booking is <%= @booking.status.downcase %> for <%= @booking.listing.name %>.</h2>
+        <h2>You have a pending booking for <%= @booking.listing.name.capitalize %>.</h2>
+      <% else %>
+
+      <% end %>
     </div>
     <div class="booking-details">
-      <h3><%= @booking.listing.name %></h3>
       <p>Date: <%= @booking.date %></p>
-      <p>Start: <%= @booking.start_time %></p>
-      <p>End: <%= @booking.end_time %></p>
+      <p>Time: <%= @booking.start_time.strftime('%H:%M') %> - <%= @booking.end_time.strftime('%H:%M') %></p>
       <p>Booking Type: <%= @booking.listing.booking_type %></p>
       <p>Quantity: <%= @booking.quantity %></p>
       <p>Price: <%= @booking.listing.price %></p>
@@ -35,7 +38,7 @@
       <div class="profile-pic">
       </div>
       <div class="name">
-      <h1 class="name-text"><%= @user.first_name %> <%= @user.last_name %></h1>
+      <h1 class="name-text"><%= @booking.user.first_name.capitalize %> <%= @booking.user.last_name.capitalize %></h1>
     </div>
     <div class="user-reviews">
     </div>
