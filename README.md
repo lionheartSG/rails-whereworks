@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/flabroo/cyclee/master/app/assets/images/cyclee-logo.png)
+![Logo](https://raw.githubusercontent.com/lionheartSG/rails-whereworks/master/app/assets/images/WHEREWORKS.png)
 # Whereworks
 Introducing Whereworks, an innovative web-based application tailored for individuals or teams in search of ideal spaces for work or meetings. Much like the convenience of Airbnb, our platform allows users to effortlessly reserve various venues, including restaurants, library rooms, and dedicated workspaces for a specified duration. Say goodbye to the hassle of scouting for suitable locations and the uncertainty of whether they accommodate your specific needs. With Whereworks, you can secure the perfect setting for your work or meetings with ease.
 
